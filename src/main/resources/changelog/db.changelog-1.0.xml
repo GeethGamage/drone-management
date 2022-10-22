@@ -1,0 +1,87 @@
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+
+    <property name="author-Geeth" value="Geeth Gamage"/>
+
+    <changeSet id="1.0" author="${author-Geeth}" >
+        <createTable tableName="medication">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(255)" />
+            <column name="weight" type="DECIMAL" />
+            <column name="code" type="VARCHAR(64)" />
+            <column name="image_ref" type="VARCHAR(128)" />
+            <column name="status" type="VARCHAR(16)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="DATETIME" defaultValue="now()">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified_date" type="DATETIME" defaultValue="now()">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable tableName="medication"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="2.0" author="${author-Geeth}" >
+        <createTable tableName="drone">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="serialNumber" type="VARCHAR(128)" >
+                <constraints nullable="false" />
+            </column>
+            <column name="model" type="VARCHAR(128)" />
+            <column name="weightLimit" type="int" />
+            <column name="batteryCapacity" type="int" />
+            <column name="state" type="VARCHAR(128)" />
+            <column name="created_date" type="DATETIME" defaultValue="now()">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified_date" type="DATETIME" defaultValue="now()">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable tableName="drone"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="3.0" author="${author-Geeth}" >
+        <createTable tableName="drone_medication_details">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="drone_id" type="int" >
+                <constraints
+                        nullable="false"
+                        foreignKeyName="fk_drone_drone_medication_details"
+                        referencedTableName="drone"
+                        referencedColumnNames="id"/>
+            </column>
+            <column name="medication_id" type="int" >
+                <constraints
+                        nullable="false"
+                        foreignKeyName="fk_medication_drone_medication_details"
+                        referencedTableName="medication"
+                        referencedColumnNames="id"/>
+            </column>
+            <column name="created_date" type="DATETIME" defaultValue="now()">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified_date" type="DATETIME" defaultValue="now()">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable tableName="drone_medication_details"/>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>
