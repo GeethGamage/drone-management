@@ -28,20 +28,17 @@ public class Drone implements Serializable {
     @Column(name = "id", unique = true, nullable = false)
     private Long id;
 
-    @Column(length = 100, unique = true, nullable = false)
+    @Column(name = "serial_number", length = 100, unique = true, nullable = false)
     private String serialNumber;
-
 
     @Column(name = "model")
     @Enumerated(EnumType.STRING)
     private ModelType model;
 
-    @Column(name = "weightLimit")
-    @Max(500)
+    @Column(name = "weight_limit")
     private Integer weightLimit;
 
-    @Column(name = "batteryCapacity")
-    @Max(100)
+    @Column(name = "battery_capacity")
     private Integer batteryCapacity;
 
     @Column(name = "state")

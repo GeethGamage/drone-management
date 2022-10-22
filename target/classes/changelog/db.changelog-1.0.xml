@@ -35,12 +35,12 @@
             <column name="id" type="int" autoIncrement="true">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
-            <column name="serialNumber" type="VARCHAR(128)" >
+            <column name="serial_number" type="VARCHAR(128)" >
                 <constraints nullable="false" />
             </column>
             <column name="model" type="VARCHAR(128)" />
-            <column name="weightLimit" type="int" />
-            <column name="batteryCapacity" type="int" />
+            <column name="weight_limit" type="int" />
+            <column name="battery_capacity" type="int" />
             <column name="state" type="VARCHAR(128)" />
             <column name="created_date" type="DATETIME" defaultValue="now()">
                 <constraints nullable="false"/>
