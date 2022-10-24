@@ -23,12 +23,6 @@ public class ResponseGenerator {
         return ResponseEntity.status(httpStatus).body(responseDTO);
     }
 
-    public ResponseEntity<Object> generateSuccessResponse(Object requestBean, HttpStatus httpStatus, String responseCode, String responseDescription) throws Exception {
-        SuccessResponse responseDTO = new SuccessResponse();
-        responseDTO.setResponseCode(responseCode);
-        responseDTO.setResponseDescription(responseDescription);
-        return ResponseEntity.status(httpStatus).body(responseDTO);
-    }
 
 
     public ResponseEntity<Object> generateErrorResponse(HttpStatus httpStatus, String errorCode, String errorMessage) {
@@ -38,5 +32,9 @@ public class ResponseGenerator {
         return ResponseEntity.status(httpStatus).body(errorResponse);
     }
 
+    public ResponseEntity<Object> generateNoContentResponse()
+    {
+        return ResponseEntity.noContent().build();
+    }
 
 }

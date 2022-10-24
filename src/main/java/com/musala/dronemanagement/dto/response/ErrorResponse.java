@@ -11,6 +11,4 @@ public class ErrorResponse
     private String errorCode;
 
     private String errorDescription;
-
-    private Object data;
 }

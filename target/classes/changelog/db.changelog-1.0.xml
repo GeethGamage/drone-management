@@ -15,9 +15,6 @@
             <column name="weight" type="DECIMAL" />
             <column name="code" type="VARCHAR(64)" />
             <column name="image_ref" type="VARCHAR(128)" />
-            <column name="status" type="VARCHAR(16)">
-                <constraints nullable="false"/>
-            </column>
             <column name="created_date" type="DATETIME" defaultValue="now()">
                 <constraints nullable="false"/>
             </column>

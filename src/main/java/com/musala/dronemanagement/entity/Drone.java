@@ -5,7 +5,6 @@ import com.musala.dronemanagement.util.enums.StateType;
 import lombok.Data;
 
 import javax.persistence.*;
-import javax.validation.constraints.Max;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -26,7 +25,7 @@ public class Drone implements Serializable {
     @Id
     @GeneratedValue(strategy = IDENTITY)
     @Column(name = "id", unique = true, nullable = false)
-    private Long id;
+    private Integer id;
 
     @Column(name = "serial_number", length = 100, unique = true, nullable = false)
     private String serialNumber;

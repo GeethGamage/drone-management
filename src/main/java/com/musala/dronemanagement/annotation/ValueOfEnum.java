@@ -1,7 +1,6 @@
 package com.musala.dronemanagement.annotation;
 
 import com.musala.dronemanagement.validator.ValueOfEnumValidator;
-
 import javax.validation.Constraint;
 import javax.validation.Payload;
 import java.lang.annotation.Documented;
