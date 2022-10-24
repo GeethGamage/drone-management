@@ -57,13 +57,13 @@ Useful drone functions include delivery of small items that are (urgently) neede
 
 ---
 
-- **loading a drone with medication items**: http://localhost:8080/api/v1/drone/medications
+- **Loading a drone with medication items**: http://localhost:8080/api/v1/drone/medications
 
 ![details.png](https://i.postimg.cc/kMRhSNRM/p4.png)
 
 ---
 
-- **checking loaded medication items for a given drone**: http://localhost:8080/api/v1/drone/medications/0000111
+- **Checking loaded medication items for a given drone**: http://localhost:8080/api/v1/drone/medications/0000111
 
 ![battery.png](https://i.postimg.cc/253xDm4j/p5.png)
 
